@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<form action="Edit" method="patch">
+    <div class="form-group row">
+        <label for="FirstName">First Name</label>
+        <input type="text" class="form-control" name="FirstName" placeholder="First Name">
+    </div>
+    <br />
+    <div class="form-group row">
+        <label for="LastName">Last Name</label>
+        <input type="text" class="form-control" name="LastName" placeholder="LastNname">
+    </div>
+    <br />
+    <div class="form-group row">
+        <label for="MiddleName">Middle Name</label>
+        <input type="text" class="form-control" name="MiddleName" placeholder="Middle Name">
+    </div>
+    <br />
+    <div class="form-group row">
+        <label for="PrefferedName">Preffered Name</label>
+        <input type="text" class="form-control" name="PrefferedName" placeholder="Preffered Name">
+    </div>
+    <br />
+    <input type="hidden" name="EmployeeID" value="" /> 
+    <input type="submit" class="btn btn-primary" value="Submit Form">
+</form>

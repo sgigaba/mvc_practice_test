@@ -38,10 +38,24 @@
             return this.RedirectToAction("Index");
         }
 
-        [HttpDelete]
+        [HttpGet]
         public IActionResult Delete(int id)
         {
+            if (id > 0)
+            {
+                var employee = this.context.Employees.Find(id);
+
+                this.context.Remove(employee);
+                this.context.SaveChanges();
+            }
+
             return this.RedirectToAction("Index");
+        }
+
+        [HttpPatch]
+        public IActionResult Edit(Employee model)
+        {
+            return this.View();
         }
     }
 }
