@@ -52,10 +52,16 @@
             return this.RedirectToAction("Index");
         }
 
-        [HttpPatch]
-        public IActionResult Edit(Employee model)
+        [HttpGet]
+        public IActionResult Edit()
         {
             return this.View();
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Employee model)
+        {
+            return this.RedirectToAction("Index");
         }
     }
 }
