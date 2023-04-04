@@ -48,6 +48,11 @@ namespace mvc_practice_test
                 name: "default",
                 pattern: "{controller=Employee}/{action=Index}/{id?}");
 
+
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Employee}/{action=AddEmployee}/{id?}");
+
             app.Run();
         }
     }

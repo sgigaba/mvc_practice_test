@@ -11,5 +11,7 @@
         }
 
         public DbSet<TestTable> TestTables { get; set; }
+
+        public DbSet<Employee> Employees { get; set; }
     }
 }
