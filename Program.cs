@@ -6,7 +6,7 @@ var configuration = configbuilder.Build();
 // Add services to the container.
 builder.Services.AddRazorPages();
 
-//builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
