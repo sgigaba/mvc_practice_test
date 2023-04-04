@@ -1,7 +1,12 @@
 var builder = WebApplication.CreateBuilder(args);
 
+var configbuilder = new ConfigurationBuilder().AddJsonFile("appsetings.json", optional: true, reloadOnChange: true);
+var configuration = configbuilder.Build();
+
 // Add services to the container.
 builder.Services.AddRazorPages();
+
+//builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
 
@@ -22,6 +27,12 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
-app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}");
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Test}/{action=Index}/{id?}");
 
 app.Run();

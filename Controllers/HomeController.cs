@@ -6,7 +6,12 @@
     {
         public IActionResult Index()
         {
-            return View();
+            return this.View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return this.View();
         }
     }
 }
