@@ -24,9 +24,10 @@
         [HttpGet]
         public IActionResult AddEmployee()
         {
-            //var titles = this.context.EnumTitles.ToList();
-            var titles = this.context.EnumTitles.ToList();
-            var employee = this.context.Employees.Include(_ => _.EnumTitle).ToList();
+            var employee = new Employee()
+            {
+                Titles = this.context.EnumTitles.ToList()
+            };
 
             return this.View(employee);
         }

@@ -27,6 +27,9 @@
         [NotMapped]
         public EnumTitles EnumTitle { get; set; }
 
+        [NotMapped]
+        public List<EnumTitles> Titles { get; set; }
+
         public bool? EmployeeRetired { get; set; }
     }
 }

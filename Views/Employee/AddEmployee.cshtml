@@ -1,4 +1,4 @@
-﻿@model IEnumerable<mvc_practice_test.Models.Employee>
+﻿@model mvc_practice_test.Models.Employee
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
@@ -25,15 +25,15 @@
         <label for="PrefferedName">Preffered Name</label>
         <input type="text" class="form-control" name="PrefferedName" placeholder="Preffered Name">
     </div>
-    <div class="form-group row">
-        <label for="Titles">Title</label>
-        <select name="Titles" id="Titles"> 
-            @foreach(var employee in Model)
+@*    <div class="form-group row">
+        <label for="TitleID">Title</label>
+        <select name="TitleID" id="Titles"> 
+            @foreach(var employee in Model.Titles)
             {
-                <option value="@employee.EnumTitle.Title"> @employee.EnumTitle.Title</option>
+                <option value="@employee.TitleID"> @employee.Title</option>
             }
         </select>
-    </div>
+    </div>*@
     <br />
     <input type="submit" class="btn btn-primary" value="Submit Form">
 </form>
