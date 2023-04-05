@@ -22,14 +22,14 @@
 
         public string? MaidenName { get; set; }
 
-        [ForeignKey("")]
+        [ForeignKey("EnumTitles")]
         public int? TitleId { get; set; }
 
         [NotMapped]
-        public EnumTitles EnumTitle { get; set; }
+        public EnumTitles? EnumTitle { get; set; }
 
         [NotMapped]
-        public List<EnumTitles> Titles { get; set; }
+        public List<EnumTitles>? Titles { get; set; }
 
         public bool? EmployeeRetired { get; set; }
     }

@@ -25,15 +25,15 @@
         <label for="PrefferedName">Preffered Name</label>
         <input type="text" class="form-control" name="PrefferedName" placeholder="Preffered Name">
     </div>
-@*    <div class="form-group row">
+    <div class="form-group row">
         <label for="TitleID">Title</label>
-        <select name="TitleID" id="Titles"> 
+        <select name="TitleID"> 
             @foreach(var employee in Model.Titles)
             {
-                <option value="@employee.TitleID"> @employee.Title</option>
+                <option name="@employee.TitleID" value="@employee.TitleID"> @employee.Title</option>
             }
         </select>
-    </div>*@
+    </div>
     <br />
     <input type="submit" class="btn btn-primary" value="Submit Form">
 </form>
