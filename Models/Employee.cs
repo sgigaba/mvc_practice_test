@@ -1,6 +1,7 @@
 ﻿namespace mvc_practice_test.Models
 {
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class Employee
     {
@@ -22,6 +23,9 @@
         public string? MaidenName { get; set; }
 
         public int? TitleId { get; set; }
+
+        [NotMapped]
+        public EnumTitles EnumTitle { get; set; }
 
         public bool? EmployeeRetired { get; set; }
     }

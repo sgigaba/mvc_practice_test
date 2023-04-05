@@ -1,4 +1,5 @@
-﻿@*
+﻿@model mvc_practice_test.Models.Employee
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
@@ -7,24 +8,24 @@
 <form action="Edit" method="post">
     <div class="form-group row">
         <label for="FirstName">First Name</label>
-        <input type="text" class="form-control" name="FirstName" placeholder="First Name">
+        <input type="text" class="form-control" name="FirstName" value="@Model.FirstName">
     </div>
     <br />
     <div class="form-group row">
         <label for="LastName">Last Name</label>
-        <input type="text" class="form-control" name="LastName" placeholder="LastNname">
+        <input type="text" class="form-control" name="LastName" value="@Model.LastName">
     </div>
     <br />
     <div class="form-group row">
         <label for="MiddleName">Middle Name</label>
-        <input type="text" class="form-control" name="MiddleName" placeholder="Middle Name">
+        <input type="text" class="form-control" name="MiddleName" value="@Model.MiddleName">
     </div>
     <br />
     <div class="form-group row">
         <label for="PrefferedName">Preffered Name</label>
-        <input type="text" class="form-control" name="PrefferedName" placeholder="Preffered Name">
+        <input type="text" class="form-control" name="PrefferedName" value="@Model.PrefferedName">
     </div>
     <br />
-    <input type="hidden" name="EmployeeID" value="EmployeeID"/> 
+    <input type="hidden" name="EmployeeID" value="@Model.EmployeeID"/> 
     <input type="submit" class="btn btn-primary" value="Submit Form">
 </form>

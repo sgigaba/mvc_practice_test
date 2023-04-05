@@ -13,5 +13,7 @@
         public DbSet<TestTable> TestTables { get; set; }
 
         public DbSet<Employee> Employees { get; set; }
+
+        public DbSet<EnumTitles> EnumTitles { get; set; }
     }
 }

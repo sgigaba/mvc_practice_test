@@ -1,6 +1,7 @@
 ﻿namespace mvc_practice_test.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
     using mvc_practice_test.Models;
 
     public class EmployeeController : Controller
@@ -23,7 +24,10 @@
         [HttpGet]
         public IActionResult AddEmployee()
         {
-            return this.View();
+            //var titles = this.context.EnumTitles.ToList();
+            var employee = this.context.Employees.Include(_ => _.EnumTitle).ToList();
+
+            return this.View(employee);
         }
 
         [HttpPost]
@@ -53,14 +57,22 @@
         }
 
         [HttpGet]
-        public IActionResult Edit()
+        public IActionResult Edit(int id)
         {
-            return this.View();
+            var employee = this.context.Employees.FirstOrDefault(_ => _.EmployeeID == id);
+
+            return this.View(employee);
         }
 
         [HttpPost]
         public IActionResult Edit(Employee model)
         {
+            if (this.ModelState.IsValid)
+            {
+                this.context.Update(model);
+                this.context.SaveChanges();
+            }
+
             return this.RedirectToAction("Index");
         }
     }

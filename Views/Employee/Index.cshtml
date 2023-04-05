@@ -18,6 +18,7 @@
             <th scope="col">Middle Name</th>
             <th scope="col">Preffered Name</th>
             <th scope="col">Maiden Name</th>
+            <th scope="col">Titles</th>
             <th scope="col">Employee Retired</th>
             <th scope="col"> Update Employee</th>
         </tr>
@@ -41,12 +42,15 @@
                 <td>
                     @employee.MaidenName
                 </td>
+                <td> 
+                    @employee.TitleId
+                </td>
                 <td>
                     @employee.EmployeeRetired
                 </td>
                 <td>
                     <a asp-action="Delete" asp-controller="Employee" asp-route-id="@employee.EmployeeID"> Delete </a>
-                    <a asp-action="Edit" asp-controller="Employee" asp-route-EmployeeID="@employee.EmployeeID"> Edit </a>
+                    <a asp-action="Edit" asp-controller="Employee" asp-route-id="@employee.EmployeeID"> Edit </a>
                 </td>
             </tr>
         }
