@@ -22,6 +22,7 @@
 
         public string? MaidenName { get; set; }
 
+        [ForeignKey("")]
         public int? TitleId { get; set; }
 
         [NotMapped]
